@@ -39,18 +39,18 @@ Casual uses javascript properties for common generators so you don't need to use
 
 // Address
 
-casual.country          // 'United Kingdom'
-casual.city             // 'New Ortiz chester'
-casual.zip              // '26995'
-casual.street           // 'Jadyn Islands'
-casual.address          // '6390 Tremblay Pines Suite 784'
-casual.address1         // '8417 Veda Circles'
-casual.address2         // 'Suite 648'
-casual.state            // 'Michigan'
-casual.state_abbr       // 'CO'
-casual.latitude         // 90.0610
-casual.longitude        // 180.0778
-casual.building_number  // 2413
+casual.country              // 'United Kingdom'
+casual.city                 // 'New Ortiz chester'
+casual.zip(digits = {5, 9}) // '26995-7979' (if no digits specified then random selection between ZIP and ZIP+4)
+casual.street               // 'Jadyn Islands'
+casual.address              // '6390 Tremblay Pines Suite 784'
+casual.address1             // '8417 Veda Circles'
+casual.address2             // 'Suite 648'
+casual.state                // 'Michigan'
+casual.state_abbr           // 'CO'
+casual.latitude             // 90.0610
+casual.longitude            // 180.0778
+casual.building_number      // 2413
 
 // Text
 
@@ -68,10 +68,11 @@ casual.letter                 // 'k'
 
 // Internet
 
-casual.ip      // '21.44.122.149'
-casual.domain  // 'darrion.us'
-casual.url     // 'germaine.net'
-casual.email   // 'Josue.Hessel@claire.us'
+casual.ip           // '21.44.122.149'
+casual.domain       // 'darrion.us'
+casual.url          // 'germaine.net'
+casual.email        // 'Josue.Hessel@claire.us'
+casual.user_agent   // 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0'
 
 // Person
 
@@ -86,7 +87,7 @@ casual.name_suffix     // 'Jr.'
 casual.company_name    // 'Cole, Wuckert and Strosin'
 casual.company_suffix  // 'Inc'
 casual.catch_phrase    // 'Synchronised optimal concept'
-casual.phone           // '380 82 790 25 92'
+casual.phone           // '982-790-2592'
 
 // Numbers
 
@@ -96,6 +97,7 @@ casual.double(from = -1000, to = 1000)   // -234.12987444
 casual.array_of_digits(n = 7)            // [ 4, 8, 3, 1, 7, 6, 6 ]
 casual.array_of_integers(n = 7)          // [ -105, -7, -532, -596, -430, -957, -234 ]
 casual.array_of_doubles(n = 7)           // [ -866.3755785673857, -166.62194719538093, ...]
+casual.coin_flip                         // true
 
 // Date
 
@@ -326,6 +328,10 @@ There is a simple cli util which could be used to view/debug providers output:
 
 	 # Will render table with columns [generator_name, result] only for person provider
 	node utils/show.js person
+	
+## Browserify support
+
+Currently you can't use casual with browserify. Please check out this browserify-friendly fork [Klowner/casual-browserify](https://github.com/Klowner/casual-browserify)
 
 ## Contributing
 
